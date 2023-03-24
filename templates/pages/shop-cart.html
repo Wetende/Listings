@@ -88,7 +88,7 @@
                     <br>
 
                     <button class="btn btn-dark btn-block btn-md" type="submit">Update Cart</button>
-                    <button id="update" class="btn btn-color btn-block btn-md" type="submit">Proceed To Checkout</button>
+                    <button id="proceed" class="btn btn-color btn-block btn-md" onclick="checkout_redirect()" value="{{favourite.total_price}}" type="submit">Proceed To Checkout</button>
                 </div>
             </div>
         </div>
@@ -147,6 +147,11 @@ deleteBtns.forEach(btn=>{
 
 
 
+function checkout_redirect(){
+    const amount = document.getElementById('proceed').value
+    window.location = `/checkout/${amount}`
+
+}
 
 // const quantityBtns = document.getElementById("qty")
 

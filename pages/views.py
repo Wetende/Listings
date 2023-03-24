@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.db.models import Q
 
+from .mpesa import initiate_stk
 
 
 def index(request):
@@ -118,7 +119,6 @@ def cart(request):
         "favourite":favourite,
         "favouriteitems":favouriteitems
     }
-    print(favourite)
     return render(request, 'pages/shop-cart.html', context)
 
 
@@ -193,7 +193,16 @@ def about(request):
 
 
 
+def checkout(request, amount):
+    if request.method == 'POST':
+        amount = request.POST['amount']
+        phone = request.POST['phone']
 
+        initiate_stk(phone, amount)
+        messages.info(request, 'Payment in process')
+        return redirect('index')
+
+    return render(request,'pages/checkout.html' ,{'amount':amount})
  
  
  
