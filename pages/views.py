@@ -30,6 +30,8 @@ def index(request):
 
     return render(request, 'pages/index-5.html', context)
 
+ 
+
 def properties(request):
 
     if 'area' in request.GET:

@@ -21,6 +21,7 @@ urlpatterns = [
     path('category/<int:category_id>/', views.category, name='category'),
     path('tag/<int:tag_id>/', views.tag, name='tag'),
     path('checkout/<int:amount>/',views.checkout, name='checkout'),
+    
 
 
     # path('bookmark/', bookmark, name='bookmark'),

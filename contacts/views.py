@@ -37,4 +37,5 @@ def contact(request):
 
     messages.success(request, 'Your request has been submitted, a realtor will get back to you soon')
     return redirect('/listings/'+listing_id)
-
+  else:
+    return render(request, 'listings/contact-1.html')
