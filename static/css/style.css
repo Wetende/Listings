@@ -1568,7 +1568,7 @@ a {
 
 /** SUB BANNER **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(http://placehold.it/1920x400) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url("/home/wetende/Projects/Listings/static/img/sub-banner.jpg") top left repeat;
     background-size: cover;
     height: 400px;
     background-position: center center;

@@ -27,8 +27,8 @@
                 <div class="user-profile-box mrb">
                     <!--header -->
                     <div class="header">
-                        <h2 style="color: black;">Emma Connor</h2>
-                        <h4 style="color: black;">Creative Director</h4>
+                        <h2 style="color: black;">Wetende</h2>
+                        <h4 style="color: black;">The Director</h4>
                         <img src="{% static 'img/vs.png' %}" alt="avatar" class="img-fluid profile-img">
                     </div>
                     <!-- Detail -->
@@ -75,6 +75,34 @@
                             <th>Actions</th>
                         </tr>
                         </thead>
+                        <tbody>
+                            <tr>
+                                <td class="listing-photoo">
+                                    <img alt="my-properties" src="http://placehold.it/163x108" class="img-fluid">
+                                </td>
+                                <td class="title-container">
+                                    <h5><a href="#">Luxury Villa</a></h5>
+                                    <h6><span>$90.00</span> / monthly</h6>
+                                    <p><i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City, </p>
+                                </td>
+                                <td class="date">
+                                    7.02.2020
+                                </td>
+                                <td class="action">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fa fa-pencil"></i> Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa  fa-eye-slash"></i> Hide</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="delete"><i class="fa fa-remove"></i> Delete</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
                         <tbody class="responsive-table">
                             {% for Listing in listings %}
 
