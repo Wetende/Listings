@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from contacts.models import Contact
 from listings.models import Listing
 from django.contrib.auth.decorators import login_required
+from .models import UserProperties
 
 def register(request):
   if request.method == 'POST':
@@ -83,16 +84,13 @@ def favourite_properties(request, user_id):
   return render(request, 'accounts/favorited-properties.html')
   
 
-def my_properties(request, user_id):
-  user = User.objects.get(pk=user_id)
-  listings = Listing.objects.order_by('-list_date').filter(user=user)
 
-  context = {
-        'listings': listings
-    }
-  
-  return render(request, 'accounts/my-properties.html', context)
-  
+def mProperties(request, user_id):
+    user_properties = UserProperties.objects.get(user=request.user)
+    listings = user_properties.get_listings()
+    context = {'listings': listings}
+    return render(request, 'accounts/my-properties.html', context)
+
  
 def profile(request):
   return render(request, 'accounts/user-profile.html')
